@@ -1,0 +1,25 @@
+static
+frontend
+
+*.sqlite3
+*.json
+
+# Editor directories and files
+.idea
+.vscode
+
+# Django settings
+**/settings.py
+*.pyc
+*.ipynb
+*log
+*pycache__
+*#
+*~
+.ropeproject
+.DS_Store
+temp/*
+media/*
+gunicorn.py
+.python-version
+
