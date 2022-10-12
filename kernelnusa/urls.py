@@ -23,6 +23,5 @@ from api.views import home
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),
-    path('', home),
-
+    path('', lambda req: redirect('/admin/')),
 ]
