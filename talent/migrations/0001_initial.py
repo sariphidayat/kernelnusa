@@ -17,7 +17,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Education',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=10)),
                 ('note', models.TextField(blank=True, null=True)),
             ],
@@ -25,7 +26,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Experience',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('company_name', models.CharField(max_length=150)),
                 ('position', models.CharField(max_length=150)),
                 ('start_date', models.DateField()),
@@ -36,7 +38,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Majoring',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=10)),
                 ('note', models.TextField(blank=True, null=True)),
             ],
@@ -44,7 +47,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='StatusPerkawinan',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=50)),
                 ('note', models.CharField(max_length=150)),
             ],
@@ -52,7 +56,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='WorkPosition',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=10)),
                 ('note', models.TextField(blank=True, null=True)),
             ],
@@ -60,7 +65,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Zone',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=100)),
                 ('type', models.PositiveSmallIntegerField()),
                 ('province', models.CharField(max_length=150, unique=True)),
@@ -69,37 +75,50 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Interview',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('date_time', models.DateTimeField()),
                 ('is_present', models.BooleanField(default=True)),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                ('user', models.ForeignKey(
+                    on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),
         migrations.CreateModel(
             name='Candidate',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=100)),
                 ('phone_number', models.CharField(max_length=15)),
                 ('email', models.CharField(max_length=100)),
                 ('domicilie', models.TextField(blank=True, null=True)),
-                ('sofware_skills', models.TextField(blank=True, default='-', null=True)),
+                ('sofware_skills', models.TextField(
+                    blank=True, default='-', null=True)),
                 ('gender', models.BooleanField(default=0)),
                 ('age', models.PositiveSmallIntegerField(blank=True, null=True)),
-                ('expected_salary', models.DecimalField(blank=True, decimal_places=2, max_digits=12, null=True)),
+                ('expected_salary', models.DecimalField(
+                    blank=True, decimal_places=2, max_digits=12, null=True)),
                 ('is_phoned', models.BooleanField(default=False)),
                 ('is_texted', models.BooleanField(default=False)),
                 ('is_emailed', models.BooleanField(default=False)),
                 ('is_confirmed', models.BooleanField(default=False)),
-                ('result', models.PositiveSmallIntegerField(choices=[(1, 'PENDING'), (2, 'ACCEPTED'), (3, 'IGNORED')], default=1)),
+                ('result', models.PositiveSmallIntegerField(choices=[
+                 (1, 'PENDING'), (2, 'ACCEPTED'), (3, 'IGNORED')], default=1)),
                 ('remarks', models.TextField(blank=True, default='-', null=True)),
-                ('applied_position', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='talent.workposition')),
-                ('education', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='talent.education')),
-                ('experience', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='talent.experience')),
-                ('interview', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='talent.interview')),
-                ('majoring', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='talent.majoring')),
-                ('status', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='talent.statusperkawinan')),
-                ('zone', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='talent.zone')),
+                ('applied_position', models.ForeignKey(
+                    on_delete=django.db.models.deletion.CASCADE, to='talent.workposition')),
+                ('education', models.ForeignKey(
+                    on_delete=django.db.models.deletion.CASCADE, to='talent.education')),
+                ('experience', models.ForeignKey(
+                    on_delete=django.db.models.deletion.CASCADE, to='talent.experience')),
+                ('interview', models.ForeignKey(
+                    on_delete=django.db.models.deletion.CASCADE, to='talent.interview')),
+                ('majoring', models.ForeignKey(blank=True, null=True,
+                 on_delete=django.db.models.deletion.CASCADE, to='talent.majoring')),
+                ('status', models.ForeignKey(
+                    on_delete=django.db.models.deletion.CASCADE, to='talent.statusperkawinan')),
+                ('zone', models.ForeignKey(blank=True, null=True,
+                 on_delete=django.db.models.deletion.CASCADE, to='talent.zone')),
             ],
         ),
     ]

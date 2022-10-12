@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from hris.admin import AdminBase
+from kernelnusa.admin import AdminBase
 from .models import AdditionalQuestion, Education, Majoring, \
     StatusPerkawinan, Zone, WorkPosition, Religion
 

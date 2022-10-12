@@ -14,7 +14,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Education',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=150)),
                 ('note', models.TextField(blank=True, null=True)),
             ],
@@ -22,7 +23,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Majoring',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=150)),
                 ('note', models.TextField(blank=True, null=True)),
             ],
@@ -30,7 +32,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='StatusPerkawinan',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=50)),
                 ('note', models.CharField(max_length=150)),
             ],
@@ -38,7 +41,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='WorkPosition',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=150)),
                 ('note', models.TextField(blank=True, null=True)),
             ],
@@ -46,9 +50,11 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Zone',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=100)),
-                ('type', models.PositiveSmallIntegerField(choices=[(1, 'Kabupaten'), (2, 'Kota')])),
+                ('type', models.PositiveSmallIntegerField(
+                    choices=[(1, 'Kabupaten'), (2, 'Kota')])),
                 ('province', models.CharField(max_length=150)),
             ],
         ),

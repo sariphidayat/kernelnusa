@@ -22,7 +22,6 @@ class Candidate(models.Model):
         (2, 'ACCEPTED'),
         (3, 'IGNORED')
     )
-
     GENDER_OPTIONS = (
         (False, 'MALE'),
         (True, 'FEMALE')
