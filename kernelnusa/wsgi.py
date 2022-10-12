@@ -1,5 +1,5 @@
 """
-WSGI config for kernelnusa project.
+WSGI config for hris project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 

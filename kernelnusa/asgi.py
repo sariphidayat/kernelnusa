@@ -1,5 +1,5 @@
 """
-ASGI config for kernelnusa project.
+ASGI config for hris project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
